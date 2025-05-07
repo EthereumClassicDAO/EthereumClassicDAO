@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethereum Classic DAO</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --primary: #32ffb2;
+      --text: #e0e0e0;
+      --accent: #1e1e1e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--accent);
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    nav a {
+      color: var(--text);
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      padding: 0 5%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: var(--primary);
+    }
+
+    .hero p {
+      margin: 1.5rem 0;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta {
+      background: var(--primary);
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta:hover {
+      background: #28e29a;
+    }
+
+    section {
+      padding: 6rem 5%;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: var(--accent);
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(50, 255, 178, 0.2);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 5%;
+      background: var(--accent);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Ethereum Classic DAO</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#treasury">Treasury</a>
+      <a href="#governance">Governance</a>
+      <a href="#links">Links</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div>
+      <h1>Decentralized, Sustainable, Immutable</h1>
+      <p>The Olympia Upgrade empowers Ethereum Classic with a transparent, self-funded DAO treasury — governed by the community, protected by proof-of-work.</p>
+      <a href="https://medium.com/@ethereum-classic" class="cta" target="_blank">Read the Full Announcement</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>What is Olympia?</h2>
+    <p>The Olympia Upgrade introduces EIP-1559 and an on-chain treasury to Ethereum Classic. It ensures long-term sustainability while preserving ETC's core principles: censorship resistance, sound money, and immutability.</p>
+  </section>
+
+  <section id="treasury">
+    <h2>Olympia Treasury</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🔐 Protocol-level Funding</h3>
+        <p>Base fees from every transaction are collected and stored in a transparent treasury smart contract.</p>
+      </div>
+      <div class="card">
+        <h3>🏦 Public Goods Focus</h3>
+        <p>Funds are dedicated to infrastructure, developer tooling, security, and ecosystem development.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="governance">
+    <h2>Olympia DAO Governance</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>🗳 Community Voting</h3>
+        <p>Voting determines how treasury funds are allocated.</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Proposals & Execution</h3>
+        <p>Anyone can submit proposals. Smart contracts enforce execution without centralized intermediaries.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="links">
+    <h2>Get Involved</h2>
+    <div class="grid">
+      <div class="card">
+        <h3><a href="https://ethereumclassic.org" target="_blank">ETC Website</a></h3>
+      </div>
+      <div class="card">
+        <h3><a href="https://medium.com/@ethereum-classic" target="_blank">Medium Blog</a></h3>
+      </div>
+      <div class="card">
+        <h3><a href="https://twitter.com/EthClassicDAO" target="_blank">Twitter</a></h3>
+      </div>
+      <div class="card">
+        <h3><a href="https://discord.gg/3j55xXEEdP" target="_blank">Join Discord</a></h3>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ethereum Classic DAO | Built by the community | Deployed on GitHub Pages</p>
+  </footer>
+
+  <script>
+    ScrollReveal().reveal('.hero h1, .hero p, .cta', { delay: 200, duration: 1000, origin: 'bottom', distance: '50px' });
+    ScrollReveal().reveal('section', { delay: 200, duration: 1000, origin: 'bottom', distance: '50px' });
+    ScrollReveal().reveal('.card', { interval: 200 });
+  </script>
+</body>
+</html>
