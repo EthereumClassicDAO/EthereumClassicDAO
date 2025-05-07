@@ -3,152 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethereum Classic DAO - Olympia Upgrade</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Ethereum Classic DAO</title>
+  <link rel="icon" href="assets/images/etc-logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --green: #00ffae;
+      --bg: #0a0f10;
+      --text: #ffffff;
+      --muted: #9ca3af;
+      --accent: #14f1b4;
+      --card-bg: #111517;
+      --card-border: #1f292b;
+    }
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0b0f1a;
-      color: #ffffff;
-      line-height: 1.6;
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg) url('assets/images/bg-dao-web3.svg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      overflow-x: hidden;
     }
     header {
-      background-color: #111827;
-      padding: 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: center;
+      padding: 2rem;
     }
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
+    header img {
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      color: var(--green);
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
     }
     nav a {
-      color: #ffffff;
-      margin-left: 1.5rem;
       text-decoration: none;
+      color: var(--muted);
       font-weight: 600;
     }
-    .hero {
-      padding: 4rem 2rem;
-      text-align: center;
-      background: linear-gradient(145deg, #111827, #1f2937);
+    nav a:hover {
+      color: var(--green);
     }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 700;
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: var(--accent);
     }
     .hero p {
-      font-size: 1.25rem;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto 2rem;
+      color: var(--muted);
     }
-    .btn-primary {
-      background-color: #10b981;
-      color: #0b0f1a;
+    .btn {
+      display: inline-block;
       padding: 0.75rem 1.5rem;
-      border: none;
-      font-weight: bold;
-      border-radius: 0.5rem;
+      background: var(--green);
+      color: var(--bg);
       text-decoration: none;
+      font-weight: bold;
+      border-radius: 6px;
       transition: background 0.3s ease;
     }
-    .btn-primary:hover {
-      background-color: #059669;
+    .btn:hover {
+      background: var(--accent);
     }
-    .section {
+    section {
       padding: 4rem 2rem;
-      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
-    .section h2 {
-      font-size: 2rem;
+    section h3 {
+      font-size: 1.75rem;
       margin-bottom: 1rem;
+      color: var(--green);
     }
-    .grid {
+    section p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
       margin-top: 2rem;
     }
     .card {
-      background: #1f2937;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
       padding: 2rem;
-      border-radius: 0.75rem;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      border-color: var(--green);
+    }
+    .card h4 {
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: var(--muted);
     }
     footer {
-      background-color: #111827;
-      padding: 2rem;
       text-align: center;
-      color: #6b7280;
-    }
-    a.external-link {
-      color: #10b981;
+      padding: 2rem;
+      border-top: 1px solid #1d1f20;
+      color: var(--muted);
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Ethereum Classic DAO</div>
+    <img src="assets/images/etc-logo.svg" alt="ETC Logo">
+    <h1>Ethereum Classic DAO</h1>
     <nav>
-      <a href="#upgrade">Olympia</a>
-      <a href="#treasury">Treasury</a>
-      <a href="#governance">DAO</a>
-      <a href="#mission">Mission</a>
+      <a href="#olympia">Olympia Upgrade</a>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
     </nav>
   </header>
-
   <section class="hero">
-    <h1>Olympia Upgrade</h1>
-    <p>The first protocol-level funding and governance system for Ethereum Classic. Transparent. Decentralized. Sustainable.</p>
-    <a href="https://medium.com/@ethereum-classic/ethereum-classics-olympia-upgrade-unlocking-on-chain-funding-and-future-sustainability-08ad0287224a" class="btn-primary" target="_blank">Read the Full Article</a>
+    <h2>Fueling Ethereum Classic’s Future with On-Chain Funding</h2>
+    <p>The Olympia Upgrade unlocks a self-sustaining treasury for the Ethereum Classic ecosystem, backed by code, governance, and community.</p>
+    <a class="btn" href="https://medium.com/@ethereum-classic/ethereum-classics-olympia-upgrade-unlocking-on-chain-funding-and-future-sustainability-08ad0287224a" target="_blank">Read the Full Article</a>
   </section>
-
-  <section class="section" id="upgrade">
-    <h2>What is Olympia?</h2>
-    <p>The Olympia Upgrade (ECIP-1111) integrates EIP-1559 and introduces a protocol-level treasury and DAO governance — aligning ETC with the modern EVM ecosystem.</p>
-    <div class="grid">
+  <section id="olympia">
+    <h3>Olympia Upgrade</h3>
+    <p>ECIP-1111 brings EIP-1559 to Ethereum Classic, routing base fee burns to the Olympia Treasury, laying the foundation for sustainable development.</p>
+  </section>
+  <section id="features">
+    <h3>DAO Features</h3>
+    <div class="cards">
       <div class="card">
-        <h3>EIP-1559</h3>
-        <p>Modern fee mechanism with base fees, tips, and predictable gas pricing.</p>
+        <h4>Olympia Treasury</h4>
+        <p>Transparent on-chain treasury funded by base fees. Supports grants, infrastructure, and ecosystem expansion.</p>
+        <a class="btn" href="#" style="margin-top: 1rem; display: inline-block;">View Transparency</a>
       </div>
       <div class="card">
-        <h3>Olympia Treasury</h3>
-        <p>Base fees fund a transparent treasury to support ETC development and growth.</p>
+        <h4>Olympia DAO</h4>
+        <p>Decentralized governance system for proposals and voting. DAO LLC entity registered in Wyoming.</p>
+        <a class="btn" href="#" style="margin-top: 1rem; display: inline-block;">Enter Voting App</a>
       </div>
       <div class="card">
-        <h3>Olympia DAO</h3>
-        <p>On-chain governance system to allocate funds through open proposals and voting.</p>
+        <h4>Funding Proposals</h4>
+        <p>Submit and track proposals for Ethereum Classic development, community projects, and protocol innovation.</p>
+        <a class="btn" href="#" style="margin-top: 1rem; display: inline-block;">Submit Proposal</a>
       </div>
     </div>
   </section>
-
-  <section class="section" id="treasury">
-    <h2>Protocol-Level Funding</h2>
-    <p>ETC's first self-sustaining treasury model. From each transaction, a portion of fees goes to fund public goods, infrastructure, and protocol development — transparently and on-chain.</p>
+  <section id="about">
+    <h3>About</h3>
+    <p>The Ethereum Classic DAO aligns protocol incentives with a timeless mission: to uphold immutability, decentralization, and permissionless innovation.</p>
   </section>
-
-  <section class="section" id="governance">
-    <h2>Olympia DAO Governance</h2>
-    <p>Community members propose and vote on Ethereum Classic Funding Proposals (ECFPs). All decisions are open, auditable, and governed on-chain through transparent mechanisms.</p>
-  </section>
-
-  <section class="section" id="mission">
-    <h2>Our Mission</h2>
-    <p>To make Ethereum Classic the most sustainable and secure smart contract blockchain under Proof-of-Work. Upholding the values of immutability, decentralization, and sound money.</p>
-  </section>
-
   <footer>
-    <p>&copy; 2025 Ethereum Classic DAO | <a class="external-link" href="https://twitter.com/EthClassicDAO" target="_blank">@EthClassicDAO</a> | <a class="external-link" href="https://ethereumclassic.org" target="_blank">ethereumclassic.org</a></p>
+    <p>© 2025 Ethereum Classic DAO · <a href="https://twitter.com/EthClassicDAO" style="color: var(--green)" target="_blank">@EthClassicDAO</a></p>
   </footer>
 </body>
 </html>
