@@ -17,11 +17,7 @@
       --card-bg: #111517;
       --card-border: #1f292b;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Space Grotesk', sans-serif;
       background: var(--bg) url('assets/images/bg-1.jpg') no-repeat center center fixed;
@@ -29,23 +25,14 @@
       color: var(--text);
       overflow-x: hidden;
     }
-    a {
-      color: var(--green);
-    }
+    a { color: var(--green); }
     header {
       text-align: center;
       padding: 2rem;
       border-bottom: 1px solid #1d1f20;
     }
-    header img {
-      height: 40px;
-      margin-bottom: 0.5rem;
-    }
-    header h1 {
-      font-size: 2rem;
-      color: var(--green);
-      font-weight: 700;
-    }
+    header img { height: 40px; margin-bottom: 0.5rem; }
+    header h1 { font-size: 2rem; color: var(--green); font-weight: 700; }
     nav {
       margin-top: 1rem;
       display: flex;
@@ -60,9 +47,7 @@
       font-size: 0.95rem;
       transition: color 0.25s;
     }
-    nav a:hover {
-      color: var(--green);
-    }
+    nav a:hover { color: var(--green); }
     .badge {
       display: inline-flex;
       align-items: center;
@@ -75,19 +60,13 @@
       margin-bottom: 1rem;
       background: rgba(0, 0, 0, 0.35);
     }
-    .badge i {
-      font-size: 0.8rem;
-      color: var(--green);
-    }
+    .badge i { font-size: 0.8rem; color: var(--green); }
     main {
       max-width: 1100px;
       margin: 0 auto;
       padding: 3rem 1.5rem 4rem;
     }
-    .hero {
-      text-align: left;
-      margin-bottom: 3rem;
-    }
+    .hero { text-align: left; margin-bottom: 3rem; }
     .hero h2 {
       font-size: 2.4rem;
       margin-bottom: 1rem;
@@ -100,11 +79,7 @@
       max-width: 780px;
       line-height: 1.6;
     }
-    .hero .sub {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
+    .hero .sub { margin-top: 0.5rem; font-size: 0.95rem; color: var(--muted); }
     .btn-row {
       margin-top: 1.5rem;
       display: flex;
@@ -124,25 +99,14 @@
       font-size: 0.9rem;
       transition: background 0.25s, transform 0.2s;
     }
-    .btn i {
-      font-size: 0.9rem;
-    }
     .btn.secondary {
       background: transparent;
       color: var(--green);
       border: 1px solid var(--card-border);
     }
-    .btn:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
-    }
-    .btn.secondary:hover {
-      background: rgba(0, 255, 174, 0.08);
-    }
-
-    section {
-      margin-bottom: 3rem;
-    }
+    .btn:hover { background: var(--accent); transform: translateY(-1px); }
+    .btn.secondary:hover { background: rgba(0, 255, 174, 0.08); }
+    section { margin-bottom: 3rem; }
     section h3 {
       font-size: 1.6rem;
       margin-bottom: 1rem;
@@ -152,10 +116,7 @@
       align-items: center;
       gap: 0.5rem;
     }
-    section h3 i {
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
+    section h3 i { color: var(--accent); font-size: 1.1rem; }
     section p {
       color: var(--muted);
       font-size: 1rem;
@@ -169,23 +130,7 @@
       margin-left: 1.25rem;
       margin-bottom: 1rem;
     }
-    li + li {
-      margin-top: 0.25rem;
-    }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.75rem 0 1rem;
-    }
-    .pill {
-      border-radius: 999px;
-      border: 1px solid var(--card-border);
-      padding: 0.25rem 0.7rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      background: rgba(0, 0, 0, 0.4);
-    }
+    li + li { margin-top: 0.25rem; }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -220,10 +165,7 @@
       letter-spacing: 0.06em;
       color: var(--muted);
     }
-    .card p {
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
+    .card p { font-size: 0.95rem; margin-bottom: 0.5rem; }
     .status-tag {
       display: inline-flex;
       align-items: center;
@@ -236,18 +178,9 @@
       margin-bottom: 0.5rem;
       background: rgba(0,0,0,0.4);
     }
-    .status-tag.completed {
-      border-color: #22c55e;
-      color: #bbf7d0;
-    }
-    .status-tag.active {
-      border-color: #eab308;
-      color: #facc15;
-    }
-    .status-tag.planned {
-      border-color: #6b7280;
-      color: #e5e7eb;
-    }
+    .status-tag.completed { border-color: #22c55e; color: #bbf7d0; }
+    .status-tag.active { border-color: #eab308; color: #facc15; }
+    .status-tag.planned { border-color: #6b7280; color: #e5e7eb; }
     .callout {
       border-radius: 12px;
       border: 1px solid var(--card-border);
@@ -257,9 +190,7 @@
       color: var(--muted);
       margin-top: 1rem;
     }
-    .callout strong {
-      color: var(--accent);
-    }
+    .callout strong { color: var(--accent); }
     footer {
       text-align: center;
       padding: 2rem 1rem;
@@ -400,7 +331,7 @@
           <div class="status-tag planned">
             <i class="fa-solid fa-circle-dot"></i> Phase 5 · Consensus &amp; Mainnet Activation
           </div>
-          <h4><span>Phase 5</span> Network Upgrade, If Approved</h4>
+          <h4><span>Phase 5</span> Network Upgrade (If Approved)</h4>
           <p>
             If ETC stakeholders converge on support for Olympia, the suite is scheduled into a future
             network upgrade:
@@ -438,9 +369,7 @@
             <li>Public review threads and issues tracked in the ECIP repository.</li>
             <li>Converged spec for BASEFEE redirection semantics and treasury interface.</li>
           </ul>
-          <p>
-            Deliverable: a stable set of ECIP documents suitable for implementation and testing.
-          </p>
+          <p>Deliverable: a stable set of ECIP documents suitable for implementation and testing.</p>
         </div>
 
         <div class="card">
@@ -450,9 +379,7 @@
             <li>Client integration with the treasury address and BASEFEE redirect rules.</li>
             <li>Testnet nodes and tooling (RPC, explorers) updated to understand Olympia fields.</li>
           </ul>
-          <p>
-            Deliverable: a reference client ready for testnet activation of Olympia.
-          </p>
+          <p>Deliverable: a reference client ready for testnet activation of Olympia.</p>
         </div>
 
         <div class="card">
@@ -462,9 +389,7 @@
             <li>Deployment of ECIP-1113/1114 DAO modules and executors.</li>
             <li>End-to-end flow: test proposals that move funds from treasury to recipients.</li>
           </ul>
-          <p>
-            Deliverable: working on-chain governance stack exercising all core pathways.
-          </p>
+          <p>Deliverable: working on-chain governance stack exercising all core pathways.</p>
         </div>
 
         <div class="card">
@@ -506,13 +431,11 @@
         <strong>relies on ECIP-1000</strong> for decisions about whether and when the suite should
         be activated on mainnet.
       </p>
-      <p>
-        That means:
-      </p>
+      <p>That means:</p>
       <ul>
         <li>Each ECIP stands on its own and can be discussed or adopted independently.</li>
         <li>Consensus is gauged through the usual channels: clients, miners, node operators, and community calls.</li>
-        <li>Objections must be grounded in concrete lines of the specification, not personalities.</li>
+        <li>Protocol changes remain separate from treasury/DAO decisions.</li>
       </ul>
       <p>
         Once deployed, <strong>Olympia’s DAO layer</strong> governs treasury outflows and public-goods funding,
@@ -545,9 +468,7 @@
 
     <section id="links">
       <h3><i class="fa-solid fa-link"></i> Related Pages</h3>
-      <p>
-        For a deeper dive into the technical and strategic details behind this roadmap, see:
-      </p>
+      <p>For a deeper dive into Olympia’s technical and strategic details, see:</p>
       <ul>
         <li><a href="upgrade.html">Olympia Upgrade Overview (ECIPs 1111–1115)</a></li>
         <li><a href="fees.html">Fees &amp; Miner Incentives (ECIP-1111 &amp; 1115)</a></li>

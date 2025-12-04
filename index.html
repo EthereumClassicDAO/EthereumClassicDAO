@@ -136,10 +136,6 @@
       color: var(--muted);
       font-size: 1rem;
     }
-    .card .btn {
-      margin-top: 1rem;
-      font-size: 0.9rem;
-    }
     footer {
       text-align: center;
       padding: 2rem;
@@ -167,18 +163,18 @@
     <img src="assets/images/etc-logo.png" alt="ETC Logo">
     <h1>Olympia Upgrade – Ethereum Classic</h1>
     <nav>
-      <a href="#olympia">Olympia Overview</a>
+      <a href="#olympia">Overview</a>
       <a href="#features">ECIP Suite</a>
       <a href="#about">About</a>
     </nav>
   </header>
 
   <section class="hero">
-    <h2>Protocol-Native Treasury & Governance for ETC</h2>
+    <h2>Protocol-Native Treasury &amp; Governance for ETC</h2>
     <p>
-      Olympia is a proposed suite of Ethereum Classic Improvement Proposals (ECIPs 1111–1115)
-      that introduces EIP-1559-style BASEFEE accounting, a non-inflationary protocol treasury,
-      and a modular on-chain governance framework—all without changing ETC’s fixed-emission
+      Olympia is a suite of Ethereum Classic Improvement Proposals (ECIPs 1111–1115)
+      introducing modern fee mechanics, a non-inflationary protocol treasury,
+      and a modular on-chain governance framework—without changing ETC’s fixed-emission
       schedule or Proof-of-Work consensus.
     </p>
     <a class="btn" href="upgrade.html">Explore the Upgrade</a>
@@ -192,25 +188,23 @@
       <strong>protocol-native, transparent, and non-inflationary</strong> way
       for ETC to fund itself, using only existing fee revenue.
     </p>
-    <p>
-      The Olympia ECIP suite comprises:
-    </p>
+    <p>The Olympia ECIP suite comprises:</p>
     <ul style="color: var(--muted); margin-left: 1.25rem; line-height: 1.6;">
-      <li><strong>ECIP-1111 – Olympia EVM & Protocol Upgrades</strong><br>
+      <li><strong>ECIP-1111 – Olympia EVM &amp; Protocol Upgrades</strong><br>
         Introduces EIP-1559-style BASEFEE accounting and modern EVM features, and redirects
-        BASEFEE to a consensus-chosen destination (such as the Olympia Treasury).
+        BASEFEE to a destination chosen by consensus (for example, the Olympia Treasury).
       </li>
       <li><strong>ECIP-1112 – Olympia Treasury Contract</strong><br>
         Defines an immutable, protocol-controlled treasury smart contract to receive
-        redirected BASEFEE.
+        redirected BASEFEE and hold protocol funds.
       </li>
       <li><strong>ECIP-1113 – Olympia DAO Governance Framework</strong><br>
         Specifies a modular DAO architecture for managing treasury disbursements,
-        without hard-coding any specific voter identity or sybil-resistance scheme.
+        without hard-coding any specific voter identity or sybil-resistance system.
       </li>
       <li><strong>ECIP-1114 – Funding Proposal Process</strong><br>
         Standardizes how funding proposals are submitted, evaluated, voted on,
-        and executed with milestone-based disbursements.
+        and executed, including support for milestone-based disbursements.
       </li>
       <li><strong>ECIP-1115 – Miner Incentive Smoothing (Optional)</strong><br>
         Introduces an optional smoothing model to redistribute BASEFEE over time,
@@ -224,7 +218,7 @@
   </section>
 
   <section id="features">
-    <h3>ECIP Suite & Core Components</h3>
+    <h3>ECIP Suite &amp; Core Components</h3>
     <div class="cards">
       <div class="card">
         <h4><i class="fa-solid fa-vault"></i> Olympia Treasury (ECIP-1112)</h4>
@@ -264,7 +258,7 @@
   </section>
 
   <section id="about">
-    <h3>About Ethereum Classic & Olympia</h3>
+    <h3>About Ethereum Classic &amp; Olympia</h3>
     <p>
       Ethereum Classic is the original Ethereum chain, preserving the
       <strong>Code is Law</strong> philosophy, Proof-of-Work security, and an
@@ -284,7 +278,12 @@
   </section>
 
   <footer>
-    <p>© 2025 Ethereum Classic DAO · <a href="https://twitter.com/EthClassicDAO" style="color: var(--green)" target="_blank">@EthClassicDAO</a></p>
+    <p>
+      © 2025 Ethereum Classic DAO ·
+      <a href="https://twitter.com/EthClassicDAO" style="color: var(--green)" target="_blank">
+        @EthClassicDAO
+      </a>
+    </p>
   </footer>
 </body>
 </html>
