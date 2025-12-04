@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olympia Roadmap &amp; Milestones</title>
+  <link rel="icon" href="assets/images/etc-logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-/1DztT+/GptHoxECgFVqK+cJZXhx8cDRXJ4mKfW3ukTdrMTg7wP7NmS8EiYHEZ2TcK4bW41YrqWxKHraFiE4sA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --green: #00ffae;
+      --bg: #0a0f10;
+      --text: #ffffff;
+      --muted: #9ca3af;
+      --accent: #14f1b4;
+      --card-bg: #111517;
+      --card-border: #1f292b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg) url('assets/images/bg-1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    a {
+      color: var(--green);
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 1px solid #1d1f20;
+    }
+    header img {
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.25s;
+    }
+    nav a:hover {
+      color: var(--green);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    .badge i {
+      font-size: 0.8rem;
+      color: var(--green);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .hero {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 780px;
+      line-height: 1.6;
+    }
+    .hero .sub {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .btn-row {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.3rem;
+      background: var(--green);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn i {
+      font-size: 0.9rem;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--card-border);
+    }
+    .btn:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+    .btn.secondary:hover {
+      background: rgba(0, 255, 174, 0.08);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--green);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    section h3 i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    section p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    ul, ol {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    li + li {
+      margin-top: 0.25rem;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--green);
+      box-shadow: 0 10px 22px rgba(0, 255, 174, 0.16);
+    }
+    .card h4 {
+      color: var(--accent);
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .card h4 span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .status-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      border: 1px solid var(--card-border);
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      background: rgba(0,0,0,0.4);
+    }
+    .status-tag.completed {
+      border-color: #22c55e;
+      color: #bbf7d0;
+    }
+    .status-tag.active {
+      border-color: #eab308;
+      color: #facc15;
+    }
+    .status-tag.planned {
+      border-color: #6b7280;
+      color: #e5e7eb;
+    }
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid #1d1f20;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/images/etc-logo.png" alt="ETC Logo">
+    <h1>Olympia Roadmap &amp; Milestones</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upgrade.html">Upgrade Overview</a>
+      <a href="#phases">Phases</a>
+      <a href="#milestones">Milestones</a>
+      <a href="#governance">Governance Process</a>
+      <a href="vision.html">Long-Term Vision</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">
+        <i class="fa-solid fa-road"></i>
+        Roadmap · From Research to Mainnet
+      </div>
+      <h2>How Olympia Moves from Idea to Protocol Reality</h2>
+      <p>
+        Olympia is designed to follow Ethereum Classic’s existing governance process (ECIP-1000),
+        not bypass it. The roadmap is structured into phases that reflect how protocol changes
+        normally ship: research, specification, testnet implementation, review, and—if consensus
+        forms—mainnet activation.
+      </p>
+      <p class="sub">
+        This page outlines those phases, key milestones, and where the Olympia ECIP suite
+        (1111–1115) fits into each step.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="#phases"><i class="fa-solid fa-layer-group"></i> View Roadmap Phases</a>
+        <a class="btn secondary" href="#milestones"><i class="fa-solid fa-flag-checkered"></i> Jump to Milestones</a>
+      </div>
+    </section>
+
+    <section id="phases">
+      <h3><i class="fa-solid fa-layer-group"></i> Phases of the Olympia Roadmap</h3>
+      <p>
+        The roadmap is expressed as a set of broad phases rather than fixed calendar dates. This keeps
+        the upgrade tied to <strong>quality and consensus</strong> instead of arbitrary deadlines.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <div class="status-tag completed">
+            <i class="fa-solid fa-circle-check"></i> Phase 1 · Research &amp; Problem Definition
+          </div>
+          <h4><span>Phase 1</span> Funding Crisis &amp; Design Space</h4>
+          <p>
+            Years of community calls and discussion clarified ETC’s funding problem and explored
+            possible solutions:
+          </p>
+          <ul>
+            <li>Documenting the loss of external sponsorship and dormant community funds.</li>
+            <li>Analyzing tradeoffs between protocol treasuries, off-chain grants, and no funding.</li>
+            <li>Surveying EIP-1559, DAO frameworks, and treasury designs across the EVM ecosystem.</li>
+          </ul>
+          <p>
+            Outcome: consensus that a <strong>non-inflationary, protocol-native treasury</strong> is
+            worth designing, if it can respect ETC’s values.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="status-tag completed">
+            <i class="fa-solid fa-circle-check"></i> Phase 2 · Specification Drafting
+          </div>
+          <h4><span>Phase 2</span> ECIP Suite 1111–1115</h4>
+          <p>
+            The Olympia design was formalized into a <strong>modular ECIP suite</strong>:
+          </p>
+          <ul>
+            <li>1111 – EVM &amp; BASEFEE upgrades.</li>
+            <li>1112 – Protocol treasury contract.</li>
+            <li>1113 – Governance framework.</li>
+            <li>1114 – Funding proposal process.</li>
+            <li>1115 – Optional miner incentive smoothing.</li>
+          </ul>
+          <p>
+            Each ECIP is written to satisfy ECIP-1000 requirements: one idea per proposal,
+            clear motivation, rationale, and specification sections.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="status-tag active">
+            <i class="fa-solid fa-spinner"></i> Phase 3 · Testnet Implementations
+          </div>
+          <h4><span>Phase 3</span> Client &amp; Contract Testing</h4>
+          <p>
+            In this phase, client and contract implementations of Olympia are deployed to ETC testnets
+            (such as Mordor) to validate:
+          </p>
+          <ul>
+            <li>BASEFEE behavior and fee market dynamics (ECIP-1111).</li>
+            <li>Treasury invariants and interactions (ECIP-1112).</li>
+            <li>Governance module wiring and proposal flows (ECIP-1113/1114).</li>
+            <li>Optional smoothing behavior and parameters (ECIP-1115).</li>
+          </ul>
+          <p>
+            The goal is to uncover any bugs, edge cases, or UX issues <em>before</em> mainnet
+            consideration.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="status-tag planned">
+            <i class="fa-solid fa-circle-dot"></i> Phase 4 · Community Review &amp; Refinement
+          </div>
+          <h4><span>Phase 4</span> Broad Review &amp; Parameter Tuning</h4>
+          <p>
+            Once testnet implementations are available, the ETC community—miners, node operators,
+            developers, and users—engage in structured review:
+          </p>
+          <ul>
+            <li>Public calls and forums to discuss observed behavior and metrics.</li>
+            <li>Parameter tuning for BASEFEE, gas targets, and smoothing (if used).</li>
+            <li>Clarifications or amendments to ECIP text based on feedback.</li>
+          </ul>
+          <p>
+            This phase ends when there is either broad support to proceed or a clear need for
+            additional iteration.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="status-tag planned">
+            <i class="fa-solid fa-circle-dot"></i> Phase 5 · Consensus &amp; Mainnet Activation
+          </div>
+          <h4><span>Phase 5</span> Network Upgrade, If Approved</h4>
+          <p>
+            If ETC stakeholders converge on support for Olympia, the suite is scheduled into a future
+            network upgrade:
+          </p>
+          <ul>
+            <li>Clients implement a named hard fork including ECIP-1111–1114 (and optionally 1115).</li>
+            <li>Miners and node operators coordinate around the activation height.</li>
+            <li>Monitoring and incident response plans are prepared in advance.</li>
+          </ul>
+          <p>
+            If consensus does not form, Olympia can remain on testnet or be revised for a future cycle.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Process, Not Hype:</strong> The roadmap is meant to be realistic and aligned with
+        ECIP-1000. Olympia advances only as fast as the quality of its implementations and the
+        strength of consensus around it.
+      </div>
+    </section>
+
+    <section id="milestones">
+      <h3><i class="fa-solid fa-flag-checkered"></i> Key Milestones &amp; Deliverables</h3>
+      <p>
+        Within each phase, there are concrete milestones that can be tracked and verified by
+        the community. These help distinguish between “ideas on paper” and “code that runs”.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h4><span>Spec</span> ECIP Milestones</h4>
+          <ul>
+            <li>ECIPs 1111–1115 reach <strong>Draft</strong> status with full specifications.</li>
+            <li>Public review threads and issues tracked in the ECIP repository.</li>
+            <li>Converged spec for BASEFEE redirection semantics and treasury interface.</li>
+          </ul>
+          <p>
+            Deliverable: a stable set of ECIP documents suitable for implementation and testing.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Client</span> Implementation Milestones</h4>
+          <ul>
+            <li>At least one ETC client with a complete ECIP-1111 implementation.</li>
+            <li>Client integration with the treasury address and BASEFEE redirect rules.</li>
+            <li>Testnet nodes and tooling (RPC, explorers) updated to understand Olympia fields.</li>
+          </ul>
+          <p>
+            Deliverable: a reference client ready for testnet activation of Olympia.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Contracts</span> Treasury &amp; DAO Milestones</h4>
+          <ul>
+            <li>Deployment of the ECIP-1112 treasury contract to testnet.</li>
+            <li>Deployment of ECIP-1113/1114 DAO modules and executors.</li>
+            <li>End-to-end flow: test proposals that move funds from treasury to recipients.</li>
+          </ul>
+          <p>
+            Deliverable: working on-chain governance stack exercising all core pathways.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Testing</span> Observability &amp; Metrics</h4>
+          <ul>
+            <li>Dashboards for BASEFEE behavior, treasury inflows, and DAO proposals.</li>
+            <li>Simulations of different usage patterns and gas parameters.</li>
+            <li>Reporting on miner, node operator, and user experience during testnet trials.</li>
+          </ul>
+          <p>
+            Deliverable: evidence-based reports to inform the community’s go/no-go decision.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Community</span> Governance &amp; Communication</h4>
+          <ul>
+            <li>Structured community calls focusing separately on fees, treasury, and governance.</li>
+            <li>Written explainers, FAQs, and educational content (like this site).</li>
+            <li>Clear summaries of objections, alternatives, and tradeoffs.</li>
+          </ul>
+          <p>
+            Deliverable: an informed community that understands what Olympia does and does not do.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Tracking Progress:</strong> Over time, this roadmap can be updated with concrete
+        dates, links to PRs, testnet deployments, and call recordings so stakeholders can verify
+        progress independently.
+      </div>
+    </section>
+
+    <section id="governance">
+      <h3><i class="fa-solid fa-scale-balanced"></i> Relationship to ECIP-1000 &amp; Governance</h3>
+      <p>
+        Olympia does not introduce a new governance process for protocol changes. It explicitly
+        <strong>relies on ECIP-1000</strong> for decisions about whether and when the suite should
+        be activated on mainnet.
+      </p>
+      <p>
+        That means:
+      </p>
+      <ul>
+        <li>Each ECIP stands on its own and can be discussed or adopted independently.</li>
+        <li>Consensus is gauged through the usual channels: clients, miners, node operators, and community calls.</li>
+        <li>Objections must be grounded in concrete lines of the specification, not personalities.</li>
+      </ul>
+      <p>
+        Once deployed, <strong>Olympia’s DAO layer</strong> governs treasury outflows and public-goods funding,
+        <em>not</em> protocol changes themselves. Future protocol-level changes continue to use the ECIP process.
+      </p>
+
+      <div class="callout">
+        <strong>Two Layers of Decision-Making:</strong> ECIP-1000 remains the mechanism for changing
+        the protocol. Olympia introduces a separate, on-chain mechanism for allocating protocol
+        funds <em>within</em> the existing consensus rules.
+      </div>
+    </section>
+
+    <section id="whats-next">
+      <h3><i class="fa-solid fa-forward-step"></i> What’s Next for Olympia?</h3>
+      <p>
+        The next steps for Olympia depend on where ETC currently sits along this roadmap. In general:
+      </p>
+      <ul>
+        <li>If you are a <strong>client developer</strong>, focus on implementing and testing ECIP-1111 and treasury integration.</li>
+        <li>If you are a <strong>smart contract developer</strong>, help test the treasury and DAO contracts on testnet.</li>
+        <li>If you are a <strong>miner or node operator</strong>, participate in calls and trials to evaluate fee behavior and incentives.</li>
+        <li>If you are a <strong>community member or builder</strong>, engage with the educational material and provide feedback.</li>
+      </ul>
+      <p>
+        As more milestones are hit, this roadmap can expand into a living changelog linking to the
+        actual code, deployments, and decisions that shape Olympia’s path.
+      </p>
+    </section>
+
+    <section id="links">
+      <h3><i class="fa-solid fa-link"></i> Related Pages</h3>
+      <p>
+        For a deeper dive into the technical and strategic details behind this roadmap, see:
+      </p>
+      <ul>
+        <li><a href="upgrade.html">Olympia Upgrade Overview (ECIPs 1111–1115)</a></li>
+        <li><a href="fees.html">Fees &amp; Miner Incentives (ECIP-1111 &amp; 1115)</a></li>
+        <li><a href="treasury.html">Olympia Treasury Contract (ECIP-1112)</a></li>
+        <li><a href="governance.html">Olympia Governance &amp; Funding Process (ECIP-1113 &amp; 1114)</a></li>
+        <li><a href="impact.html">Ecosystem Impact &amp; Use Cases</a></li>
+        <li><a href="vision.html">Long-Term Vision for Ethereum Classic</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ethereum Classic DAO · <a href="index.html">Back to Home</a></p>
+  </footer>
+</body>
+</html>

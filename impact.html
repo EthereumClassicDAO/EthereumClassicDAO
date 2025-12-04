@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecosystem Impact & Use Cases – Olympia Upgrade</title>
+  <link rel="icon" href="assets/images/etc-logo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-/1DztT+/GptHoxECgFVqK+cJZXhx8cDRXJ4mKfW3ukTdrMTg7wP7NmS8EiYHEZ2TcK4bW41YrqWxKHraFiE4sA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    :root {
+      --green: #00ffae;
+      --bg: #0a0f10;
+      --text: #ffffff;
+      --muted: #9ca3af;
+      --accent: #14f1b4;
+      --card-bg: #111517;
+      --card-border: #1f292b;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background: var(--bg) url('assets/images/bg-1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    a {
+      color: var(--green);
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      border-bottom: 1px solid #1d1f20;
+    }
+    header img {
+      height: 40px;
+      margin-bottom: 0.5rem;
+    }
+    header h1 {
+      font-size: 2rem;
+      color: var(--green);
+      font-weight: 700;
+    }
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.25s;
+    }
+    nav a:hover {
+      color: var(--green);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    .badge i {
+      font-size: 0.8rem;
+      color: var(--green);
+    }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+    .hero {
+      text-align: left;
+      margin-bottom: 3rem;
+    }
+    .hero h2 {
+      font-size: 2.4rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 780px;
+      line-height: 1.6;
+    }
+    .hero .sub {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .btn-row {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.3rem;
+      background: var(--green);
+      color: var(--bg);
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      transition: background 0.25s, transform 0.2s;
+    }
+    .btn i {
+      font-size: 0.9rem;
+    }
+    .btn.secondary {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--card-border);
+    }
+    .btn:hover {
+      background: var(--accent);
+      transform: translateY(-1px);
+    }
+    .btn.secondary:hover {
+      background: rgba(0, 255, 174, 0.08);
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+    section h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: var(--green);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    section h3 i {
+      color: var(--accent);
+      font-size: 1.1rem;
+    }
+    section p {
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    ul, ol {
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.6;
+      margin-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    li + li {
+      margin-top: 0.25rem;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 1rem;
+    }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid var(--card-border);
+      padding: 0.25rem 0.7rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: var(--green);
+      box-shadow: 0 10px 22px rgba(0, 255, 174, 0.16);
+    }
+    .card h4 {
+      color: var(--accent);
+      font-size: 1.15rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .card h4 span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+    .card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .callout {
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      background: rgba(0, 0, 0, 0.55);
+      padding: 1.25rem 1.5rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-top: 1rem;
+    }
+    .callout strong {
+      color: var(--accent);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      border-top: 1px solid #1d1f20;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="assets/images/etc-logo.png" alt="ETC Logo">
+    <h1>Ecosystem Impact &amp; Use Cases – Olympia</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="upgrade.html">Upgrade Overview</a>
+      <a href="fees.html">Fees &amp; Incentives</a>
+      <a href="treasury.html">Treasury</a>
+      <a href="governance.html">Governance</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="badge">
+        <i class="fa-solid fa-globe"></i>
+        Ecosystem Impact · Clients, Builders, Miners &amp; Users
+      </div>
+      <h2>What Olympia Unlocks for the Ethereum Classic Ecosystem</h2>
+      <p>
+        Olympia gives Ethereum Classic a <strong>protocol-native way to fund itself</strong> and a more
+        modern fee model, without changing its fixed-emission schedule or Proof-of-Work consensus.
+        This changes how clients are maintained, how infrastructure is funded, how builders plan
+        long-term work, and how miners relate to network growth.
+      </p>
+      <p class="sub">
+        This page focuses on impact: what Olympia means in practice for different stakeholders and
+        how it can be used to strengthen ETC’s long-term resilience.
+      </p>
+      <div class="btn-row">
+        <a class="btn" href="#stakeholders"><i class="fa-solid fa-users"></i> View Stakeholder Impact</a>
+        <a class="btn secondary" href="#usecases"><i class="fa-solid fa-diagram-project"></i> Explore Use Cases</a>
+      </div>
+    </section>
+
+    <section id="stakeholders">
+      <h3><i class="fa-solid fa-people-group"></i> Stakeholder Impact Overview</h3>
+      <p>
+        Olympia touches almost every part of the ecosystem, but in different ways. Some groups care
+        most about fee mechanics, others about predictable funding or governance guarantees.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h4><span>Clients</span> Client Teams &amp; Core Protocol Devs</h4>
+          <p>
+            For client maintainers and protocol developers, Olympia provides a <strong>credible,
+            on-chain path</strong> to long-term funding of:
+          </p>
+          <ul>
+            <li>Core client maintenance and security patches.</li>
+            <li>New client implementations and diversification.</li>
+            <li>Research, audits, and protocol upgrades.</li>
+          </ul>
+          <p>
+            Instead of relying on sporadic grants or single-sponsor funding, teams can propose
+            <strong>milestone-based roadmaps</strong> that the DAO funds directly from the treasury.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Infra</span> Infrastructure &amp; Public Goods</h4>
+          <p>
+            RPC providers, explorers, indexers, testnets, and other shared services can request
+            <strong>stable, multi-quarter support</strong> in exchange for SLAs, transparency, and uptime.
+          </p>
+          <ul>
+            <li>Keep critical services online even in bear markets.</li>
+            <li>Fund testnets, dev tools, and monitoring.</li>
+            <li>Support cross-chain bridges and oracles on ETC.</li>
+          </ul>
+          <p>
+            This reduces the risk that key infrastructure quietly disappears when external sponsors
+            change priorities.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Builders</span> dApp &amp; Ecosystem Projects</h4>
+          <p>
+            Developers building on ETC gain access to <strong>transparent, on-chain funding</strong> for:
+          </p>
+          <ul>
+            <li>Early-stage experimentation and prototypes.</li>
+            <li>Production launches and growth initiatives.</li>
+            <li>Long-lived maintenance and community support.</li>
+          </ul>
+          <p>
+            Funding is competitive and reviewable. Proposals must justify why they create value for
+            the network, and the DAO can prioritize public goods over short-lived promotions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Miners</span> Miners &amp; Hashrate Providers</h4>
+          <p>
+            Miners keep the same <strong>fixed block rewards</strong> and earn <strong>priority fees</strong>.
+            BASEFEE is redirected to a shared treasury, potentially smoothed by ECIP-1115.
+          </p>
+          <ul>
+            <li>Long-term security budget benefits as network usage grows.</li>
+            <li>Potential for dedicated “miner-focused” funding streams (e.g., firmware, pool tools).</li>
+            <li>Stronger ecosystem = more transactions = more fee revenue overall.</li>
+          </ul>
+          <p>
+            Miners are key stakeholders in discussions about fee parameters and smoothing behavior.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Users</span> End Users &amp; Holders</h4>
+          <p>
+            For everyday users and long-term ETC holders, Olympia aims to:
+          </p>
+          <ul>
+            <li>Improve fee predictability via BASEFEE and EIP-1559-style mechanics.</li>
+            <li>Reduce ecosystem fragility by ensuring critical software is funded.</li>
+            <li>Make treasury usage visible, auditable, and openly debated.</li>
+          </ul>
+          <p>
+            The goal is a more reliable network that doesn’t depend on any single donor or company.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Donors</span> External Donors &amp; Partners</h4>
+          <p>
+            Institutions or individuals who want to support ETC can:
+          </p>
+          <ul>
+            <li>Send contributions directly to the treasury address.</li>
+            <li>Co-fund specific proposals alongside protocol revenue.</li>
+            <li>Observe exactly how their contributions are used on-chain.</li>
+          </ul>
+          <p>
+            Olympia creates a <strong>neutral, shared funding venue</strong> that outlives any single
+            organization.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="usecases">
+      <h3><i class="fa-solid fa-diagram-project"></i> Concrete Use Cases</h3>
+      <p>
+        The Olympia framework is intentionally general-purpose. Here are some concrete ways it can
+        be used in practice across the Ethereum Classic ecosystem.
+      </p>
+
+      <div class="cards">
+        <div class="card">
+          <h4><span>Use Case</span> Multi-Client Maintenance</h4>
+          <p>
+            ETC’s security depends on having <strong>multiple, well-maintained clients</strong>.
+            Olympia can fund:
+          </p>
+          <ul>
+            <li>Core maintenance for at least two independent clients.</li>
+            <li>Bug bounties, audits, and hard-fork coordination work.</li>
+            <li>New implementation efforts to diversify the client set.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h4><span>Use Case</span> Infrastructure Reliability</h4>
+          <p>
+            The DAO can allocate recurring budgets to:
+          </p>
+          <ul>
+            <li>Block explorers and transaction analytics.</li>
+            <li>RPC gateways and archival nodes.</li>
+            <li>Monitoring, alerting, and incident response tooling.</li>
+          </ul>
+          <p>
+            In return, these providers publish uptime reports and commit to clear SLAs.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Use Case</span> Grants &amp; Ecosystem Growth</h4>
+          <p>
+            Builders can propose funding for:
+          </p>
+          <ul>
+            <li>New DeFi, NFT, or infrastructure dApps on ETC.</li>
+            <li>Educational content, documentation, and onboarding programs.</li>
+            <li>Hackathons, incubators, and region-specific community efforts.</li>
+          </ul>
+          <p>
+            Milestone-based disbursements help ensure funds are tied to real progress.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Use Case</span> Risk &amp; Security Programs</h4>
+          <p>
+            Olympia can support a standing <strong>security budget</strong> for:
+          </p>
+          <ul>
+            <li>Independent audits of critical contracts and protocols.</li>
+            <li>Formal verification work on client code or core contracts.</li>
+            <li>Incident response playbooks and simulations.</li>
+          </ul>
+          <p>
+            Over time, the DAO can build a track record of proactive security investment.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Use Case</span> Child-DAOs &amp; Specialization</h4>
+          <p>
+            The main Olympia DAO can route funds into <strong>Child-DAOs</strong> focused on:
+          </p>
+          <ul>
+            <li>Core protocol &amp; client funding.</li>
+            <li>Infrastructure and tooling.</li>
+            <li>Ecosystem grants and community programs.</li>
+          </ul>
+          <p>
+            Each Child-DAO can adopt governance structures best suited for its domain, while the
+            main treasury remains centralized and auditable.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4><span>Use Case</span> Co-Funding with External Partners</h4>
+          <p>
+            External organizations can co-sponsor proposals that:
+          </p>
+          <ul>
+            <li>Match protocol funding with off-chain contributions.</li>
+            <li>Target shared priorities like client robustness or specific integrations.</li>
+            <li>Leverage the DAO’s transparency and accountability mechanisms.</li>
+          </ul>
+          <p>
+            This turns Olympia into a <strong>coordination hub</strong> rather than a closed grants program.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        <strong>Neutral Infrastructure:</strong> Olympia doesn’t dictate which projects “must” be
+        funded. It provides a structured, transparent process so that competing visions can be
+        debated in the open and decided through the DAO.
+      </div>
+    </section>
+
+    <section id="tradeoffs">
+      <h3><i class="fa-solid fa-scale-balanced"></i> Risks, Tradeoffs &amp; Constraints</h3>
+      <p>
+        Olympia is designed to solve long-standing funding problems, but it introduces its own
+        tradeoffs and new responsibilities for the ecosystem.
+      </p>
+      <ul>
+        <li>
+          <strong>Governance quality matters:</strong> Having a treasury doesn’t guarantee that
+          funds are used wisely. Poorly designed processes or apathy can lead to waste.
+        </li>
+        <li>
+          <strong>Coordination overhead:</strong> Structured funding requires documentation,
+          review, and monitoring. This is more work than ad-hoc grants, but also more accountable.
+        </li>
+        <li>
+          <strong>Incentive balance:</strong> BASEFEE redirection changes the balance between
+          miner revenue and protocol funding. Parameters like smoothing (ECIP-1115) must be tuned carefully.
+        </li>
+        <li>
+          <strong>Social resilience:</strong> Olympia cannot prevent every capture or conflict scenario.
+          Its value depends on an active, informed community willing to engage.
+        </li>
+      </ul>
+
+      <div class="callout">
+        <strong>Guardrails, not Guarantees:</strong> The ECIPs provide structural guardrails—
+        immutability, non-inflation, timelocks, transparency—but outcomes depend on how the
+        ecosystem chooses to use these tools.
+      </div>
+    </section>
+
+    <section id="signals">
+      <h3><i class="fa-solid fa-signal"></i> Measuring Impact Over Time</h3>
+      <p>
+        Olympia’s success should be judged on observable outcomes, not just design intent. Over time,
+        the community can track metrics such as:
+      </p>
+      <ul>
+        <li><strong>Client diversity:</strong> Number of actively maintained ETC clients.</li>
+        <li><strong>Infrastructure health:</strong> Uptime and redundancy of core services.</li>
+        <li><strong>Developer activity:</strong> New repos, commits, and deployed dApps on ETC.</li>
+        <li><strong>Treasury flows:</strong> Inflows from BASEFEE and outflows by category.</li>
+        <li><strong>Governance reliability:</strong> Proposal throughput, execution success rate, and incident history.</li>
+      </ul>
+      <p>
+        Dashboards and explorers can make these metrics visible, helping ETC stakeholders evaluate
+        whether Olympia is delivering on its goals and where adjustments are needed.
+      </p>
+    </section>
+
+    <section id="links">
+      <h3><i class="fa-solid fa-link"></i> Related Pages &amp; Next Steps</h3>
+      <p>
+        To understand the full context of Olympia and how the pieces connect, explore:
+      </p>
+      <ul>
+        <li><a href="upgrade.html">Olympia Upgrade Overview (ECIPs 1111–1115)</a></li>
+        <li><a href="fees.html">Fees &amp; Miner Incentives (ECIP-1111 &amp; 1115)</a></li>
+        <li><a href="treasury.html">Olympia Treasury Contract (ECIP-1112)</a></li>
+        <li><a href="governance.html">Olympia Governance &amp; Funding Process (ECIP-1113 &amp; 1114)</a></li>
+        <li><a href="roadmap.html">Olympia Roadmap &amp; Milestones</a></li>
+        <li><a href="vision.html">Long-Term Vision for Ethereum Classic</a></li>
+      </ul>
+      <p>
+        The canonical specifications for Olympia live in the Ethereum Classic ECIP repository.
+        This page is meant as an educational companion for stakeholders evaluating the upgrade’s impact.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Ethereum Classic DAO · <a href="index.html">Back to Home</a></p>
+  </footer>
+</body>
+</html>

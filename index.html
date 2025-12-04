@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ethereum Classic DAO</title>
+  <title>Olympia Upgrade – Ethereum Classic</title>
   <link rel="icon" href="assets/images/etc-logo.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-/1DztT+/GptHoxECgFVqK+cJZXhx8cDRXJ4mKfW3ukTdrMTg7wP7NmS8EiYHEZ2TcK4bW41YrqWxKHraFiE4sA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -165,46 +165,124 @@
 <body>
   <header>
     <img src="assets/images/etc-logo.png" alt="ETC Logo">
-    <h1>Ethereum Classic DAO</h1>
+    <h1>Olympia Upgrade – Ethereum Classic</h1>
     <nav>
-      <a href="#olympia">Olympia Upgrade</a>
-      <a href="#features">Features</a>
+      <a href="#olympia">Olympia Overview</a>
+      <a href="#features">ECIP Suite</a>
       <a href="#about">About</a>
     </nav>
   </header>
+
   <section class="hero">
-    <h2>Fueling Ethereum Classic’s Future with On-Chain Funding</h2>
-    <p>The Olympia Upgrade unlocks a self-sustaining treasury for the Ethereum Classic ecosystem, backed by code, governance, and community.</p>
-    <a class="btn" href="https://medium.com/@ethereum-classic/ethereum-classics-olympia-upgrade-unlocking-on-chain-funding-and-future-sustainability-08ad0287224a" target="_blank">Read the Full Article</a>
+    <h2>Protocol-Native Treasury & Governance for ETC</h2>
+    <p>
+      Olympia is a proposed suite of Ethereum Classic Improvement Proposals (ECIPs 1111–1115)
+      that introduces EIP-1559-style BASEFEE accounting, a non-inflationary protocol treasury,
+      and a modular on-chain governance framework—all without changing ETC’s fixed-emission
+      schedule or Proof-of-Work consensus.
+    </p>
+    <a class="btn" href="upgrade.html">Explore the Upgrade</a>
   </section>
+
   <section id="olympia">
-    <h3>Olympia Upgrade</h3>
-    <p>ECIP-1111 brings EIP-1559 to Ethereum Classic, routing base fee burns to the Olympia Treasury, laying the foundation for sustainable development.</p>
+    <h3>Olympia Overview</h3>
+    <p>
+      For years, Ethereum Classic has relied on external donors and off-chain grants
+      to fund core development and public goods. Olympia formalizes a
+      <strong>protocol-native, transparent, and non-inflationary</strong> way
+      for ETC to fund itself, using only existing fee revenue.
+    </p>
+    <p>
+      The Olympia ECIP suite comprises:
+    </p>
+    <ul style="color: var(--muted); margin-left: 1.25rem; line-height: 1.6;">
+      <li><strong>ECIP-1111 – Olympia EVM & Protocol Upgrades</strong><br>
+        Introduces EIP-1559-style BASEFEE accounting and modern EVM features, and redirects
+        BASEFEE to a consensus-chosen destination (such as the Olympia Treasury).
+      </li>
+      <li><strong>ECIP-1112 – Olympia Treasury Contract</strong><br>
+        Defines an immutable, protocol-controlled treasury smart contract to receive
+        redirected BASEFEE.
+      </li>
+      <li><strong>ECIP-1113 – Olympia DAO Governance Framework</strong><br>
+        Specifies a modular DAO architecture for managing treasury disbursements,
+        without hard-coding any specific voter identity or sybil-resistance scheme.
+      </li>
+      <li><strong>ECIP-1114 – Funding Proposal Process</strong><br>
+        Standardizes how funding proposals are submitted, evaluated, voted on,
+        and executed with milestone-based disbursements.
+      </li>
+      <li><strong>ECIP-1115 – Miner Incentive Smoothing (Optional)</strong><br>
+        Introduces an optional smoothing model to redistribute BASEFEE over time,
+        supporting a more stable long-term security budget.
+      </li>
+    </ul>
+    <p>
+      Together, these ECIPs provide a cohesive, modular framework for sustainable
+      development on Ethereum Classic.
+    </p>
   </section>
+
   <section id="features">
-    <h3>DAO Features</h3>
+    <h3>ECIP Suite & Core Components</h3>
     <div class="cards">
       <div class="card">
-        <h4>Olympia Treasury</h4>
-        <p>Transparent on-chain treasury funded by base fees. Supports grants, infrastructure, and ecosystem expansion.</p>
-        <a class="btn" href="#" style="margin-top: 1rem; display: inline-block;">View Transparency</a>
+        <h4><i class="fa-solid fa-vault"></i> Olympia Treasury (ECIP-1112)</h4>
+        <p>
+          A protocol-controlled, immutable treasury smart contract that receives
+          redirected BASEFEE from ECIP-1111. No new ETC is minted—funding comes
+          entirely from existing protocol revenue.
+        </p>
+        <a class="btn" href="treasury.html" style="margin-top: 1rem; display: inline-block;">
+          Learn About the Treasury
+        </a>
       </div>
       <div class="card">
-        <h4>Olympia DAO</h4>
-        <p>Decentralized governance system for proposals and voting. DAO LLC entity registered in Wyoming.</p>
-        <a class="btn" href="#" style="margin-top: 1rem; display: inline-block;">Enter Voting App</a>
+        <h4><i class="fa-solid fa-users-gear"></i> Governance Framework (ECIP-1113 &amp; 1114)</h4>
+        <p>
+          A modular DAO framework defining proposal modules, voting modules, and
+          execution timelocks, plus a standardized funding proposal process.
+          Voter identity and participation models remain a social-layer choice,
+          not protocol-level law.
+        </p>
+        <a class="btn" href="governance.html" style="margin-top: 1rem; display: inline-block;">
+          Explore Governance Design
+        </a>
       </div>
       <div class="card">
-        <h4>Funding Proposals</h4>
-        <p>Submit and track proposals for Ethereum Classic development, community projects, and protocol innovation.</p>
-        <a class="btn" href="#" style="margin-top: 1rem; display: inline-block;">Submit Proposal</a>
+        <h4><i class="fa-solid fa-coins"></i> Fees &amp; Miner Incentives (ECIP-1111 &amp; 1115)</h4>
+        <p>
+          EIP-1559-style BASEFEE accounting improves fee predictability and EVM
+          compatibility, while the optional smoothing model in ECIP-1115 helps
+          align long-term miner incentives with network usage.
+        </p>
+        <a class="btn" href="fees.html" style="margin-top: 1rem; display: inline-block;">
+          View Fee Mechanics
+        </a>
       </div>
     </div>
   </section>
+
   <section id="about">
-    <h3>About</h3>
-    <p>The Ethereum Classic DAO aligns protocol incentives with a timeless mission: to uphold immutability, decentralization, and permissionless innovation.</p>
+    <h3>About Ethereum Classic & Olympia</h3>
+    <p>
+      Ethereum Classic is the original Ethereum chain, preserving the
+      <strong>Code is Law</strong> philosophy, Proof-of-Work security, and an
+      uncompromising commitment to immutability and neutrality.
+    </p>
+    <p>
+      Olympia is designed to align with these principles. It does not introduce
+      inflation, does not rewrite history, and does not centralize control. Instead,
+      it offers a transparent, on-chain mechanism for funding public goods,
+      maintaining clients, and growing the ETC ecosystem in a way that is
+      accountable to the community.
+    </p>
+    <p>
+      This site provides a high-level view of the Olympia ECIPs. The canonical
+      specifications live in the official Ethereum Classic ECIP repository.
+    </p>
   </section>
+
   <footer>
     <p>© 2025 Ethereum Classic DAO · <a href="https://twitter.com/EthClassicDAO" style="color: var(--green)" target="_blank">@EthClassicDAO</a></p>
   </footer>
