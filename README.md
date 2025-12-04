@@ -1,4 +1,6 @@
-# EthereumClassicDAO# Olympia Upgrade – Ethereum Classic
+# EthereumClassicDAO
+
+## Olympia Upgrade – Ethereum Classic
 
 This repository contains a minimal, static website that explains the Olympia ECIP suite for Ethereum Classic.
 
