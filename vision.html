@@ -3,581 +3,237 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <meta name="description"
-    content="Olympia Upgrade for Ethereum Classic: EIP-1559-style fees, a protocol-native treasury, modular DAO governance, and sustainable public-goods funding." />
-  <!-- OpenGraph (shared defaults) -->
+    content="Explore the long-term vision behind the Olympia Upgrade for Ethereum Classic. Learn how protocol funding, DAO governance, and sustainable infrastructure shape ETC’s future as a neutral, secure, Proof-of-Work smart contract platform." />
+
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://etcdao.org/assets/images/og-default.png" />
-  <!-- Twitter -->
+
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://etcdao.org/assets/images/og-default.png" />
-  <!-- Additional SEO -->
-  <meta name="keywords"
-    content="Ethereum Classic, Olympia Upgrade, ECIP-1111, ECIP-1112, ECIP-1113, ECIP-1114, ECIP-1115, ETC Treasury, Ethereum Classic DAO, Fee Market, BASEFEE, EIP-1559" />
-  <meta name="robots" content="index, follow" />
-  <meta name="description"
-    content="Ethereum Classic’s long-term vision: programmable Proof-of-Work with sustainable, neutral, non-inflationary funding — powered by the Olympia Upgrade." />
-  <link rel="canonical" href="https://etcdao.org/vision.html" />
-  <meta property="og:title" content="Long-Term Vision – Ethereum Classic & Olympia" />
-  <meta property="og:url" content="https://etcdao.org/vision.html" />
-  <title>Long-Term Vision – Ethereum Classic &amp; Olympia</title>
-  <link rel="icon" href="assets/images/etc-logo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-/1DztT+/GptHoxECgFVqK+cJZXhx8cDRXJ4mKfW3ukTdrMTg7wP7NmS8EiYHEZ2TcK4bW41YrqWxKHraFiE4sA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    :root {
-      --green: #00ffae;
-      --bg: #0a0f10;
-      --text: #ffffff;
-      --muted: #9ca3af;
-      --accent: #14f1b4;
-      --card-bg: #111517;
-      --card-border: #1f292b;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Space Grotesk', sans-serif;
-      background: var(--bg) url('assets/images/bg.png') no-repeat center center fixed;
-      background-size: cover;
-      color: var(--text);
-      overflow-x: hidden;
-    }
-    a {
-      color: var(--green);
-    }
-    header {
-      text-align: center;
-      padding: 2rem;
-      border-bottom: 1px solid #1d1f20;
-    }
-    header img {
-      height: 40px;
-      margin-bottom: 0.5rem;
-    }
-    header h1 {
-      font-size: 2rem;
-      color: var(--green);
-      font-weight: 700;
-    }
-    nav {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: center;
-      gap: 1.75rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.25s;
-    }
-    nav a:hover {
-      color: var(--green);
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 999px;
-      border: 1px solid var(--card-border);
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-      background: rgba(0, 0, 0, 0.35);
-    }
-    .badge i {
-      font-size: 0.8rem;
-      color: var(--green);
-    }
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 4rem;
-    }
-    .hero {
-      text-align: left;
-      margin-bottom: 3rem;
-    }
-    .hero h2 {
-      font-size: 2.4rem;
-      margin-bottom: 1rem;
-      color: var(--accent);
-      font-weight: 700;
-    }
-    .hero p {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 780px;
-      line-height: 1.6;
-    }
-    .hero .sub {
-      margin-top: 0.5rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-    }
-    .btn-row {
-      margin-top: 1.5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.65rem 1.3rem;
-      background: var(--green);
-      color: var(--bg);
-      text-decoration: none;
-      font-weight: 600;
-      border-radius: 999px;
-      font-size: 0.9rem;
-      transition: background 0.25s, transform 0.2s;
-    }
-    .btn i {
-      font-size: 0.9rem;
-    }
-    .btn.secondary {
-      background: transparent;
-      color: var(--green);
-      border: 1px solid var(--card-border);
-    }
-    .btn:hover {
-      background: var(--accent);
-      transform: translateY(-1px);
-    }
-    .btn.secondary:hover {
-      background: rgba(0, 255, 174, 0.08);
-    }
 
-    section {
-      margin-bottom: 3rem;
-    }
-    section h3 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-      color: var(--green);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    section h3 i {
-      color: var(--accent);
-      font-size: 1.1rem;
-    }
-    section p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.65;
-      margin-bottom: 1rem;
-    }
-    ul, ol {
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.6;
-      margin-left: 1.25rem;
-      margin-bottom: 1rem;
-    }
-    li + li {
-      margin-top: 0.25rem;
-    }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 0.75rem 0 1rem;
-    }
-    .pill {
-      border-radius: 999px;
-      border: 1px solid var(--card-border);
-      padding: 0.25rem 0.7rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      background: rgba(0, 0, 0, 0.4);
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.75rem;
-      margin-top: 1.5rem;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
-      padding: 1.75rem 1.5rem;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
-      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: var(--green);
-      box-shadow: 0 10px 22px rgba(0, 255, 174, 0.16);
-    }
-    .card h4 {
-      color: var(--accent);
-      font-size: 1.15rem;
-      margin-bottom: 0.6rem;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .card h4 span {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-    }
-    .card p {
-      font-size: 0.95rem;
-      margin-bottom: 0.5rem;
-    }
-    .callout {
-      border-radius: 12px;
-      border: 1px solid var(--card-border);
-      background: rgba(0, 0, 0, 0.55);
-      padding: 1.25rem 1.5rem;
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-top: 1rem;
-    }
-    .callout strong {
-      color: var(--accent);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      border-top: 1px solid #1d1f20;
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-  </style>
+  <meta name="keywords"
+    content="Ethereum Classic vision, Olympia Upgrade, ECIP-1111, ECIP-1112, ECIP-1113, ECIP-1114, ECIP-1115, long-term strategy, protocol funding, DAO, Proof of Work, neutrality, immutability" />
+
+  <link rel="canonical" href="https://etcdao.org/vision.html" />
+  <meta property="og:title" content="Long-Term Vision for Ethereum Classic" />
+  <meta property="og:url" content="https://etcdao.org/vision.html" />
+  <meta name="robots" content="index, follow" />
+
+  <title>Long-Term Vision for Ethereum Classic</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/logo.png" type="image/png" />
+
+  <!-- Global Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Global Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
 <body>
   <header>
-    <img src="assets/images/etc-logo.png" alt="ETC Logo">
-    <h1>Long-Term Vision – Ethereum Classic &amp; Olympia</h1>
+    <img src="assets/images/logo.png" alt="ETC Logo">
+    <h1>Long-Term Vision for Ethereum Classic</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="upgrade.html">Upgrade Overview</a>
-      <a href="impact.html">Impact &amp; Use Cases</a>
-      <a href="roadmap.html">Roadmap</a>
+      <a href="fees.html">Fees</a>
+      <a href="treasury.html">Treasury</a>
+      <a href="governance.html">Governance</a>
+      <a href="impact.html">Impact</a>
+      <a href="#principles">Principles</a>
+      <a href="#future">Future Path</a>
+      <a href="#10year">10-Year Outlook</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="badge">
-        <i class="fa-solid fa-compass"></i>
-        Vision · Ethereum Classic in the Next Decade
+        <i class="fa-solid fa-mountain-sun"></i>
+        Beyond the Upgrade
       </div>
-      <h2>Programmable Proof-of-Work with Sustainable, Neutral Funding</h2>
+      <h2>Where Ethereum Classic Is Headed</h2>
       <p>
-        Ethereum Classic aims to be the <strong>programmable base layer for Proof-of-Work assets</strong>:
-        a credibly neutral settlement layer where smart contracts, hard money, and long-lived
-        infrastructure can coexist without central gatekeepers.
+        Olympia lays the foundation for Ethereum Classic to operate as a secure, neutral,
+        self-funding Proof-of-Work smart contract platform—not just for the next cycle, but for the
+        next decade and beyond. This page outlines the long-term vision that informs Olympia’s
+        design and explains how these upgrades support ETC’s future trajectory.
       </p>
       <p class="sub">
-        Olympia fits into this vision as the <strong>funding engine</strong> behind ETC’s next decade:
-        a way for the network to maintain itself, upgrade safely, and grow its ecosystem without
-        giving up immutability, fixed supply, or Proof-of-Work.
+        The vision centers around sustainability, decentralization, and the belief that
+        immutability and open participation create the most durable smart contract base layer in
+        the world.
       </p>
-      <div class="btn-row">
-        <a class="btn" href="#principles"><i class="fa-solid fa-scale-balanced"></i> Core Principles</a>
-        <a class="btn secondary" href="#frontiers"><i class="fa-solid fa-mountain-sun"></i> Strategic Frontiers</a>
-      </div>
     </section>
 
     <section id="principles">
-      <h3><i class="fa-solid fa-scale-balanced"></i> Core Principles for the Next Decade</h3>
+      <h3><i class="fa-solid fa-scale-balanced"></i> Guiding Principles</h3>
       <p>
-        Ethereum Classic’s long-term vision is grounded in a small set of principles that do not
-        change, even as the ecosystem and tooling evolve.
+        Ethereum Classic’s long-term vision remains anchored to the same philosophical principles
+        that have defined the chain since 2016. Olympia amplifies—not replaces—these commitments.
       </p>
 
       <div class="pill-row">
-        <span class="pill">Immutability &amp; “Code is Law”</span>
-        <span class="pill">Proof-of-Work security</span>
-        <span class="pill">Fixed, predictable monetary policy</span>
-        <span class="pill">Protocol neutrality &amp; minimalism</span>
-        <span class="pill">Open, permissionless participation</span>
-        <span class="pill">Transparent, non-inflationary funding</span>
+        <span class="pill">Immutability</span>
+        <span class="pill">Proof-of-Work</span>
+        <span class="pill">Decentralization</span>
+        <span class="pill">Credible Neutrality</span>
+        <span class="pill">Transparency</span>
+        <span class="pill">Open Participation</span>
       </div>
 
-      <p>
-        Olympia is designed to <strong>extend</strong> these principles into the realm of funding and
-        governance—without diluting them:
-      </p>
-      <ul>
-        <li>Non-inflationary treasury fed by BASEFEE, not new issuance.</li>
-        <li>Immutable vault (ECIP-1112) paired with evolvable governance modules (ECIP-1113/1114).</li>
-        <li>Clear separation between protocol rules and social choices about identity or voting.</li>
-      </ul>
+      <div class="cards">
+        <div class="card">
+          <h4>Immutability as a Social Contract</h4>
+          <p>
+            ETC’s greatest strength is the predictability and permanence of its ledger. Olympia
+            preserves this by avoiding inflation, avoiding social rule changes, and keeping
+            governance external to the protocol layer.
+          </p>
+        </div>
 
-      <div class="callout">
-        <strong>Vision in one sentence:</strong> Ethereum Classic should remain the chain that
-        <em>never rewrites history</em>, while becoming the chain that can <em>reliably fund its own future</em>.
+        <div class="card">
+          <h4>Proof-of-Work as a Security Anchor</h4>
+          <p>
+            ETC remains committed to PoW as a mechanism for censorship resistance and open access.
+            Olympia strengthens PoW by adding more predictable long-term incentives (via optional
+            smoothing) and sustainable development funding.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Decentralization Through Modularity</h4>
+          <p>
+            The DAO is modular, the treasury is immutable, and BASEFEE redirection is rules-based.
+            No single entity has structural control, and governance modules can evolve without
+            rewriting history.
+          </p>
+        </div>
+
+        <div class="card">
+          <h4>Neutrality &amp; Openness</h4>
+          <p>
+            Olympia avoids enshrining voter identity, token economics, or political preferences
+            directly in the protocol. This keeps ETC open to builders, researchers, businesses,
+            miners, and communities worldwide.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section id="role">
-      <h3><i class="fa-solid fa-layer-group"></i> ETC’s Role in the Broader Crypto Landscape</h3>
+    <section id="future">
+      <h3><i class="fa-solid fa-seedling"></i> The Future Enabled by Olympia</h3>
       <p>
-        In a world of many chains, Ethereum Classic fills a specific niche:
-      </p>
-      <ul>
-        <li><strong>Proof-of-Work smart contract platform:</strong> Combining PoW security with a fully
-          programmable EVM execution environment.</li>
-        <li><strong>Settlement layer for hard assets:</strong> A natural home for tokenized BTC, PoW assets,
-          and long-lived financial contracts that value censorship resistance.</li>
-        <li><strong>Neutral coordination layer:</strong> A base layer that does not privilege any single
-          foundation, corporation, or governance token.</li>
-      </ul>
-      <p>
-        Olympia strengthens this role by:
-      </p>
-      <ul>
-        <li>Ensuring <strong>client diversity and maintenance</strong> can be funded long term.</li>
-        <li>Keeping <strong>core infrastructure and tooling</strong> healthy, even in bear markets.</li>
-        <li>Creating a <strong>public-goods magnet</strong> for ETC-aligned builders and institutions.</li>
-      </ul>
-    </section>
-
-    <section id="frontiers">
-      <h3><i class="fa-solid fa-mountain-sun"></i> Strategic Frontiers for Ethereum Classic</h3>
-      <p>
-        Over the next 5–10 years, Olympia positions Ethereum Classic to pursue several strategic
-        frontiers.
+        With a sustainable treasury and a standardized governance process, ETC can support a much
+        broader ecosystem than was previously possible. Olympia is the beginning of a multi-year
+        expansion of capabilities, talent, and infrastructure.
       </p>
 
       <div class="cards">
         <div class="card">
-          <h4><span>Frontier</span> Sustainable Client Diversity</h4>
+          <h4>A Multi-Client, Multi-Team Development Model</h4>
           <p>
-            A resilient chain is not a single-client chain. With Olympia, ETC can:
-          </p>
-          <ul>
-            <li>Fund multiple independent clients with overlapping feature sets.</li>
-            <li>Invest in formal verification and testing across implementations.</li>
-            <li>Maintain client teams through full market cycles.</li>
-          </ul>
-          <p>
-            Long-term vision: at least two battle-tested, actively maintained clients at all times.
+            ETC no longer relies on a single organization or donor. Multiple independent client
+            teams—Core-Geth, Besu-ETC, Fukuii, and future implementations—can be funded sustainably,
+            improving security and reducing systemic fragility.
           </p>
         </div>
 
         <div class="card">
-          <h4><span>Frontier</span> Core Infrastructure as a Public Good</h4>
+          <h4>Reliable Infrastructure for Builders</h4>
           <p>
-            Block explorers, RPC endpoints, testnets, and monitoring are not side projects—they are
-            <strong>core public goods</strong>. Olympia provides:
-          </p>
-          <ul>
-            <li>Recurring, milestone-based budgets for critical services.</li>
-            <li>Incentives for redundancy and geographic distribution.</li>
-            <li>Clear expectations around uptime and observability.</li>
-          </ul>
-          <p>
-            Vision: an ETC ecosystem where no single company “owns” core infra, but everyone
-            depends on a robust, shared base.
+            Long-term funding enables better RPC networks, explorers, testnets, indexers, and
+            tooling. Builders get a stable foundation that attracts applications, liquidity, and
+            new users.
           </p>
         </div>
 
         <div class="card">
-          <h4><span>Frontier</span> Programmable PoW &amp; Cross-Asset Settlement</h4>
+          <h4>Professionalized Ecosystem Growth</h4>
           <p>
-            ETC’s EVM layer, combined with PoW security, makes it a strong candidate to host:
-          </p>
-          <ul>
-            <li>Wrapped PoW assets (e.g., BTC, LTC, other mined assets).</li>
-            <li>Cross-chain settlement for layer-2s and sidechains.</li>
-            <li>On-chain instruments tied to energy, hashpower, or compute markets.</li>
-          </ul>
-          <p>
-            Olympia can fund the bridges, primitives, and standards needed to make ETC a natural
-            settlement hub for these systems.
+            Hackathons, grants, audits, documentation initiatives, education programs, and community
+            outreach become predictable and scalable instead of ad-hoc.
           </p>
         </div>
 
         <div class="card">
-          <h4><span>Frontier</span> Long-Horizon Public Goods &amp; Research</h4>
+          <h4>DAO-Native Governance Culture</h4>
           <p>
-            Some work is inherently long-term: protocol research, education, security culture,
-            documentation. Olympia enables:
-          </p>
-          <ul>
-            <li>Multi-year research initiatives aligned with ETC values.</li>
-            <li>Educational programs, docs, and translation efforts.</li>
-            <li>Security and governance research that benefits all ETC projects.</li>
-          </ul>
-          <p>
-            The treasury gives ETC a way to invest in things that don’t pay off in a single quarter.
+            Olympia introduces a transparent, structured decision process. Over time, the ecosystem
+            matures into a culture where proposals, votes, and execution are routine and auditable.
           </p>
         </div>
 
         <div class="card">
-          <h4><span>Frontier</span> Neutral Governance Experimentation</h4>
+          <h4>Incentive Stability for Miners</h4>
           <p>
-            Because ECIP-1113/1114 are modular, ETC can host <strong>multiple governance experiments</strong>
-            around a single treasury:
-          </p>
-          <ul>
-            <li>Identity-based systems and sybil-resistant participation models.</li>
-            <li>Delegate systems that balance expertise with broad input.</li>
-            <li>Hybrid approaches combining stake, reputation, and contribution.</li>
-          </ul>
-          <p>
-            The protocol remains neutral; experimentation lives in the DAO layer, not in consensus.
+            Optional incentive smoothing and a growing ecosystem help maintain robust hashrate and
+            long-term PoW security even as block rewards decline over the decade.
           </p>
         </div>
 
         <div class="card">
-          <h4><span>Frontier</span> Institutional &amp; Community Co-Funding</h4>
+          <h4>The Foundation for a Public-Goods Economy</h4>
           <p>
-            Olympia creates a neutral venue where:
-          </p>
-          <ul>
-            <li>Institutional partners can co-fund public goods alongside protocol revenue.</li>
-            <li>Community donations can be pooled and governed transparently.</li>
-            <li>Both can see exactly how funds are used on-chain.</li>
-          </ul>
-          <p>
-            Vision: ETC as a gathering point for long-term aligned capital, not just short-term speculation.
+            The treasury enables a new class of contributors—researchers, educators, infrastructure
+            teams, public-goods builders—to work sustainably on ETC without relying on short-term
+            grants or centralized sponsors.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="scenarios">
-      <h3><i class="fa-solid fa-binoculars"></i> 5–10 Year Scenarios</h3>
+    <section id="10year">
+      <h3><i class="fa-solid fa-chart-line"></i> A 10-Year Outlook for Ethereum Classic</h3>
       <p>
-        No roadmap is certain, but we can outline what “success” might look like if Olympia delivers
-        on its design goals.
+        Looking ahead, Olympia positions ETC for a future where it is recognized globally as a
+        secure, neutral, and sustainable Proof-of-Work smart contract platform.
       </p>
 
-      <div class="cards">
-        <div class="card">
-          <h4><span>Scenario</span> Resilient Base Layer</h4>
-          <p>
-            In a successful scenario:
-          </p>
-          <ul>
-            <li>ETC maintains multiple production-grade clients.</li>
-            <li>Core infrastructure is funded, redundant, and boringly reliable.</li>
-            <li>Protocol upgrades follow a predictable, well-documented process.</li>
-          </ul>
-          <p>
-            The chain becomes known for <strong>stability and professionalism</strong>, not drama.
-          </p>
-        </div>
+      <ul>
+        <li>
+          <strong>A flourishing developer community:</strong>
+          Multiple client teams, open-source working groups, and funded research hubs.
+        </li>
+        <li>
+          <strong>Infrastructure-grade reliability:</strong>
+          Predictable funding for key services, testnets, explorers, RPCs, and developer tools.
+        </li>
+        <li>
+          <strong>Wider global adoption:</strong>
+          Businesses, nation-states, institutions, and grassroots communities can all rely on ETC’s
+          neutrality and stability.
+        </li>
+        <li>
+          <strong>A robust DAO ecosystem:</strong>
+          Child-DAOs for protocol development, security, research, and community engagement.
+        </li>
+        <li>
+          <strong>Long-term PoW viability:</strong>
+          A stable incentive environment and a growing ecosystem that supports network security.
+        </li>
+        <li>
+          <strong>A living, evolving governance process:</strong>
+          Olympia becomes the foundation for future iterations—OIPs, refinements, and next-gen
+          governance modules.
+        </li>
+      </ul>
 
-        <div class="card">
-          <h4><span>Scenario</span> Healthy Ecosystem Flywheel</h4>
-          <p>
-            With sustainable funding:
-          </p>
-          <ul>
-            <li>More builders deploy on ETC because they see long-term support.</li>
-            <li>More usage drives more BASEFEE and treasury inflow.</li>
-            <li>The DAO reinvests into clients, infra, and new projects.</li>
-          </ul>
-          <p>
-            Over time, ETC’s public-goods flywheel makes it increasingly attractive as a base layer.
-          </p>
-        </div>
-
-        <div class="card">
-          <h4><span>Scenario</span> Robust Governance Culture</h4>
-          <p>
-            A mature Olympia ecosystem develops:
-          </p>
-          <ul>
-            <li>Clear norms for evaluating proposals and tradeoffs.</li>
-            <li>Independent reviewers and watchdogs focused on treasury use.</li>
-            <li>Documented precedents that guide future decisions.</li>
-          </ul>
-          <p>
-            Governance becomes less about personalities and more about <strong>process and evidence</strong>.
-          </p>
-        </div>
+      <div class="callout section-spacer">
+        <strong>In essence:</strong>
+        Olympia transforms ETC from a network dependent on volunteerism and external sponsors into
+        a self-sustaining, decentralized, and future-proof smart contract platform grounded in
+        immutability and Proof-of-Work.
       </div>
-
-      <div class="callout">
-        <strong>Reality Check:</strong> These scenarios are not guaranteed. Olympia only provides
-        the tools. The community’s choices over the next decade determine how powerful those tools
-        become in practice.
-      </div>
-    </section>
-
-    <section id="unchanged">
-      <h3><i class="fa-solid fa-anchor"></i> What Olympia Does Not Change</h3>
-      <p>
-        A clear vision also requires clear boundaries. Olympia is <strong>not</strong> about changing:
-      </p>
-      <ul>
-        <li><strong>Consensus:</strong> Ethereum Classic remains Proof-of-Work.</li>
-        <li><strong>Monetary policy:</strong> No new issuance; the emission schedule stays fixed.</li>
-        <li><strong>Chain history:</strong> No rewrites, no special bailouts.</li>
-        <li><strong>Protocol governance:</strong> ECIP-1000 continues to govern protocol changes.</li>
-      </ul>
-      <p>
-        Instead, Olympia:
-      </p>
-      <ul>
-        <li>Adds capabilities for <strong>on-chain funding and governance</strong>.</li>
-        <li>Redirects an existing revenue stream (BASEFEE) into a shared treasury.</li>
-        <li>Creates structure around how the ecosystem invests in itself.</li>
-      </ul>
-    </section>
-
-    <section id="participation">
-      <h3><i class="fa-solid fa-hands-holding-circle"></i> How Stakeholders Fit into the Vision</h3>
-      <p>
-        Turning this vision into reality requires sustained participation from many different types
-        of stakeholders:
-      </p>
-      <ul>
-        <li><strong>Client teams:</strong> Build, test, and maintain implementations of Olympia and future upgrades.</li>
-        <li><strong>Infrastructure providers:</strong> Run the services that make ETC usable day to day.</li>
-        <li><strong>Builders &amp; researchers:</strong> Propose public-goods work aligned with ETC’s values.</li>
-        <li><strong>Miners &amp; node operators:</strong> Evaluate incentives, run upgraded clients, and provide feedback.</li>
-        <li><strong>Users &amp; holders:</strong> Track treasury flows, participate in governance, and hold decision-makers accountable.</li>
-      </ul>
-      <p>
-        Olympia’s design is meant to give each of these groups <strong>formal hooks</strong> into how
-        ETC funds its future, rather than relying on informal influence or back-channel deals.
-      </p>
-    </section>
-
-    <section id="links">
-      <h3><i class="fa-solid fa-link"></i> Connecting the Vision to the Spec</h3>
-      <p>
-        This page describes where Ethereum Classic is trying to go. The other Olympia pages explain
-        the mechanisms that aim to get it there:
-      </p>
-      <ul>
-        <li><a href="upgrade.html">Olympia Upgrade Overview (ECIPs 1111–1115)</a></li>
-        <li><a href="fees.html">Fees &amp; Miner Incentives (ECIP-1111 &amp; 1115)</a></li>
-        <li><a href="treasury.html">Olympia Treasury Contract (ECIP-1112)</a></li>
-        <li><a href="governance.html">Olympia Governance &amp; Funding Process (ECIP-1113 &amp; 1114)</a></li>
-        <li><a href="impact.html">Ecosystem Impact &amp; Use Cases</a></li>
-        <li><a href="roadmap.html">Olympia Roadmap &amp; Milestones</a></li>
-      </ul>
-      <p>
-        The canonical, low-level specifications for Olympia live in the Ethereum Classic ECIP
-        repository. This vision is the <em>why</em>; the ECIPs are the <em>how</em>.
-      </p>
     </section>
   </main>
 
