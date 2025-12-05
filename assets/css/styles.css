@@ -231,6 +231,13 @@ main > section {
   background: rgba(0, 255, 174, 0.10);
 }
 
+.card .btn {
+  display: block;
+  margin: 1.5rem auto 0 auto;
+  width: fit-content;
+  text-align: center;
+}
+
 /* ---------- Section Headings & Text ---------- */
 
 section h3 {
