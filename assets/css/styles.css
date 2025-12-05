@@ -248,6 +248,14 @@ section h3 {
   text-align: center;
 }
 
+.subheader {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: left;
+}
 
 section p {
   color: var(--muted);
@@ -276,6 +284,17 @@ li + li {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.75rem;
   margin-top: 1.5rem;
+}
+
+/* Two-column card layout (Used for Contract Layer ECIPs) */
+.cards-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 760px) {
+  .cards-2col {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
