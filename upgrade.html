@@ -44,7 +44,7 @@
 <body>
   <header>
     <img src="assets/images/logo.png" alt="ETC Logo">
-    <h1>The Olympia Upgrade – Ethereum Classic</h1>
+    <h1>THE OLYMPIA UPGRADE</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="#suite">ECIP Suite</a>
@@ -53,34 +53,49 @@
       <a href="#links">Further Reading</a>
     </nav>
   </header>
-
+  
   <main>
+    <!-- HERO: HIGH-LEVEL STORY -->
     <section class="hero">
       <div class="badge">
         <i class="fa-solid fa-layer-group"></i>
-        ECIPs 1111–1115 · Modular Upgrade Suite
+        ECIPs 1111–1115 · Protocol-Level Funding Layer
       </div>
-      <h2>A Cohesive Upgrade for Fees, Treasury, and Governance</h2>
+  
+      <h3>Olympia: The Funding Layer for Ethereum Classic</h3>
+      
       <p>
-        Olympia is a modular upgrade suite for Ethereum Classic that connects modern fee mechanics,
-        a protocol-native treasury, and on-chain governance into one coherent system. It is composed
-        of five Ethereum Classic Improvement Proposals (ECIPs)—<strong>1111 through 1115</strong>—
-        that can be adopted together or in stages, without changing ETC’s fixed emission or
-        Proof-of-Work consensus.
+        Olympia is the upgrade that gives Ethereum Classic a sustainable, protocol-native funding layer.
+        It unifies modern fee mechanics, an immutable Treasury, and on-chain governance into a coherent,
+        transparent system. Defined across <strong>ECIPs 1111 through 1115</strong>, Olympia introduces
+        these capabilities without changing ETC’s fixed monetary policy, miner incentives, or Proof-of-Work
+        consensus.
       </p>
       <p class="sub">
-        This page tells the high-level upgrade story. The subpages linked below go deeper into fees,
-        the treasury contract, governance design, expected ecosystem impact, and long-term vision.
+        Olympia defines how BASEFEE accounting, a non-inflationary Treasury, and an on-chain governance
+        and funding process work together at the protocol and contract layers. It is designed for the people
+        who rely on the network—miners, developers, node operators, and ecosystem builders—by providing a
+        transparent, accountable way to sustain clients, infrastructure, and public goods without depending
+        on centralized donors or off-chain sponsors. As of November 11, 2025 (“Olympia Day”), Ethereum Classic
+        core developers have moved from the ECIP drafting phase into reference implementation, integrating
+        the consensus-layer components of <strong>ECIP-1111</strong> into <strong>Fukuii</strong>, a modern,
+        Scala-based ETC client derived from Mantis. Fukuii is maintained independently of the Ethereum
+        Foundation’s Proof-of-Stake roadmap, giving Ethereum Classic a native, long-term client path for
+        validating and deploying Olympia on testnets and, ultimately, mainnet.
       </p>
-      <a class="btn" href="fees.html">
-        Explore Fees &amp; Miner Incentives
-        <i class="fa-solid fa-arrow-right"></i>
-      </a>
-      <a class="btn secondary" href="treasury.html">
-        View the Treasury Design
-      </a>
+  
+      <div class="btn-row">
+        <a class="btn" href="fees.html">
+          Explore Fees &amp; Miner Incentives
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a class="btn secondary" href="treasury.html">
+          View the Treasury Design
+        </a>
+      </div>
     </section>
 
+    <!-- OLYMPIA ECIP SUITE -->
     <section id="suite">
       <h3><i class="fa-solid fa-diagram-project"></i> The Olympia ECIP Suite</h3>
       <p>
@@ -90,111 +105,125 @@
       </p>
 
       <div class="cards">
+        <!-- ECIP-1111 -->
         <div class="card">
-          <h4><span>ECIP–1111</span> Olympia EVM &amp; Protocol Upgrades</h4>
+          <h4><span>ECIP-1111</span> Olympia EVM &amp; Protocol Upgrades</h4>
           <p>
-            Introduces <strong>EIP-1559-style BASEFEE accounting</strong>, type-2 transactions, and
-            related EVM compatibility improvements. BASEFEE is a protocol-set minimum fee per unit of gas.
-            Instead of burning BASEFEE as Ethereum does, ETC redirects it to a consensus-selected
-            destination, enabling protocol-native funding without inflation.
+            Introduces <strong>EIP-1559-style fee mechanics</strong> and the <code>BASEFEE</code> opcode
+            (<strong>EIP-3198</strong>) on Ethereum Classic. BASEFEE becomes a protocol-set minimum fee per
+            unit of gas. On ETC, unlike Ethereum mainnet, <strong>100% of BASEFEE is redirected</strong>
+            at the consensus layer to the Olympia Treasury (ECIP-1112) instead of being burned.
           </p>
           <ul>
-            <li>Modernizes ETC’s fee market and transaction types.</li>
+            <li>Modernizes ETC’s fee market with EIP-1559-style accounting.</li>
             <li>Improves compatibility with contemporary EVM tooling and wallets.</li>
             <li>Preserves Proof-of-Work and fixed monetary policy.</li>
-            <li>Provides the plumbing for BASEFEE redirection (for example, to the Olympia Treasury).</li>
+            <li>Provides the plumbing for protocol-native, non-inflationary funding.</li>
           </ul>
-          <a class="btn-link" href="fees.html">Learn more in the Fee Mechanics section →</a>
+          <a class="btn secondary" href="fees.html">Learn more in the Fee Mechanics section</a>
         </div>
 
+        <!-- ECIP-1112 -->
         <div class="card">
-          <h4><span>ECIP–1112</span> Olympia Treasury Contract</h4>
+          <h4><span>ECIP-1112</span> Olympia Treasury Contract</h4>
           <p>
-            Defines a <strong>protocol-controlled, immutable treasury smart contract</strong> that
-            can receive BASEFEE and disburse funds only via standardized governance calls.
+            Defines a <strong>deterministic, immutable Treasury smart contract</strong> that receives all
+            BASEFEE redirected by ECIP-1111. The Treasury is governance-isolated: it has no admin keys, no
+            upgrade paths, and no minting functions. Funds may only be withdrawn through a single authorized
+            execution entry point controlled by Olympia DAO.
           </p>
           <ul>
-            <li>No upgrade keys, no backdoors, no minting functions.</li>
-            <li>Designed purely as a vault for protocol revenue.</li>
-            <li>All movements of funds are transparent and auditable on-chain.</li>
+            <li>No upgrade keys, backdoors, or mutable parameters.</li>
+            <li>Acts purely as a vault for consensus-directed BASEFEE revenue.</li>
+            <li>All deposits and withdrawals are transparent and auditable on-chain.</li>
           </ul>
-          <a class="btn-link" href="treasury.html">See how the treasury is structured →</a>
+          <a class="btn secondary" href="treasury.html">See how the Treasury is structured</a>
         </div>
 
+        <!-- ECIP-1113 -->
         <div class="card">
-          <h4><span>ECIP–1113</span> Olympia DAO Governance Framework</h4>
+          <h4><span>ECIP-1113</span> Olympia DAO Governance Framework</h4>
           <p>
-            Specifies a <strong>modular DAO architecture</strong> that governs how the treasury
-            authorizes disbursements. It separates core protocol funding capabilities from social
-            choices around identity, delegation, and participation.
+            Specifies a <strong>modular DAO architecture</strong> that serves as the sole authorized path to
+            the Treasury. Olympia DAO is built around a Governor, Timelock, and Executor design and launches
+            <strong>without a governance token</strong>. Voting models and identity systems are introduced
+            separately through the Olympia Improvement Proposal (OIP) process.
           </p>
           <ul>
-            <li>Defines roles, modules, and execution timelocks.</li>
+            <li>Defines the Governor → Timelock → Executor execution pipeline.</li>
             <li>Supports Child-DAOs and specialized funding streams.</li>
-            <li>Does <em>not</em> hard-code voter identity or any specific sybil-resistance model.</li>
+            <li>Does <em>not</em> hard-code voter identity or a specific sybil-resistance model.</li>
           </ul>
-          <a class="btn-link" href="governance.html">Dive into the governance framework →</a>
+          <a class="btn secondary" href="governance.html">Dive into the governance framework</a>
         </div>
 
+        <!-- ECIP-1114 -->
         <div class="card">
-          <h4><span>ECIP–1114</span> Funding Proposal Process</h4>
+          <h4><span>ECIP-1114</span> Ethereum Classic Funding Proposal Process</h4>
           <p>
-            Standardizes the <strong>lifecycle of funding proposals</strong>—from submission and
-            review to voting and milestone-based execution.
+            Formalizes the <strong>Ethereum Classic Funding Proposal (ECFP)</strong> standard—the exclusive,
+            hash-bound mechanism for spending from the Olympia Treasury. Each proposal is tied to immutable,
+            content-addressed metadata and moves through a clear lifecycle from submission to execution.
           </p>
           <ul>
-            <li>Defines proposal states, required metadata, and execution rules.</li>
-            <li>Supports milestone-based payouts and escrows for accountability.</li>
-            <li>Works for both community-driven and institutional proposals.</li>
+            <li>Defines the canonical ECFP data model and proposal states.</li>
+            <li>Requires deterministic, hash-bound payloads for Treasury withdrawals.</li>
+            <li>Supports milestone-based payouts and works for both community and institutional proposals.</li>
           </ul>
-          <a class="btn-link" href="governance.html#proposals">See how proposals flow through the DAO →</a>
+          <a class="btn secondary" href="governance.html#proposals">See how proposals flow through Olympia DAO</a>
         </div>
 
+        <!-- ECIP-1115 -->
         <div class="card">
-          <h4><span>ECIP–1115</span> Miner Incentive Smoothing (Optional)</h4>
+          <h4>
+            <span>ECIP-1115</span> Olympia L-Curve Smoothing
+            <small class="subtext">(Optional)</small>
+          </h4>
           <p>
-            Introduces an <strong>optional smoothing mechanism</strong> that redistributes BASEFEE
-            over time, following a modeled “L-curve” to support a more predictable long-term
-            security budget.
+            Introduces an <strong>optional governance-layer smoothing mechanism</strong> that applies a
+            deterministic L-curve to Treasury-held BASEFEE. Smoothing shapes the <em>timing</em> of
+            governance-approved payouts to miners, without changing their <em>total</em> amount or altering
+            consensus rules.
           </p>
           <ul>
-            <li>Helps miners plan around variable fee revenue.</li>
-            <li>Is explicitly optional and can be enabled or omitted by consensus.</li>
-            <li>Works alongside 1111–1114 without changing their core guarantees.</li>
+            <li>Helps miners plan around variable fee revenue over longer time horizons.</li>
+            <li>Operates entirely at the contract and governance layer—no consensus changes required.</li>
+            <li>Can be enabled, tuned, or disabled through the OIP process as the network matures.</li>
           </ul>
-          <a class="btn-link" href="fees.html#smoothing">Read about miner incentive smoothing →</a>
+          <a class="btn secondary" href="fees.html#smoothing">Read about miner incentive smoothing</a>
         </div>
       </div>
 
-      <div class="callout">
-        <strong>Modular by Design:</strong>
-        1111 can be adopted on its own to modernize fees and redirect BASEFEE.
-        1112–1114 add a treasury and governance layer. 1115 is optional and can be
-        revisited independently as the network matures.
+      <div class="callout section-spacer">
+        <strong>Layered Architecture:</strong>
+        ECIPs 1111 and 1112 form the minimal consensus and Treasury foundation.
+        ECIPs 1113 and 1114 add DAO governance and the ECFP funding pipeline.
+        ECIP-1115 is optional, operating purely at the governance layer to smooth payouts over time.
       </div>
     </section>
 
+    <!-- DESIGN PRINCIPLES -->
     <section id="principles">
       <h3><i class="fa-solid fa-scale-balanced"></i> Design Principles</h3>
       <p>
         Olympia is intentionally aligned with Ethereum Classic’s long-standing philosophy.
         Each ECIP is written to respect a small set of non-negotiable constraints:
       </p>
-      <div class="pill-row">
-        <span class="pill">No monetary inflation</span>
-        <span class="pill">Proof-of-Work preserved</span>
-        <span class="pill">Immutability &amp; “Code is Law”</span>
-        <span class="pill">Transparent on-chain funding</span>
-        <span class="pill">Modular governance</span>
-        <span class="pill">Client diversity &amp; compatibility</span>
-      </div>
+      <ul>
+        <li>No monetary inflation or new governance token required.</li>
+        <li>Proof-of-Work consensus and chain history are preserved.</li>
+        <li>Immutability and the <strong>Code is Law</strong> ethos remain intact.</li>
+        <li>Funding flows are transparent, on-chain, and auditable.</li>
+        <li>Governance is modular and upgradeable at the contract layer.</li>
+        <li>EVM compatibility and client diversity are treated as first-class goals.</li>
+      </ul>
       <p>
         Instead of introducing a new “governance coin” or routing decisions through a single
         foundation, Olympia:
       </p>
       <ul>
         <li>Uses <strong>existing protocol revenue (BASEFEE)</strong> instead of new issuance.</li>
-        <li>Keeps the <strong>treasury contract immutable</strong> while allowing governance modules to evolve.</li>
+        <li>Keeps the <strong>Treasury contract immutable</strong> while allowing governance modules to evolve.</li>
         <li>Separates <strong>capabilities</strong> (what the protocol can do) from
           <strong>social choices</strong> (who participates and how).</li>
         <li>Maintains <strong>EVM compatibility</strong> by adopting 1559-style accounting without burning.</li>
@@ -206,29 +235,31 @@
       </p>
     </section>
 
+    <!-- DEPLOYMENT PATH -->
     <section id="deployment">
       <h3><i class="fa-solid fa-road"></i> Deployment Path &amp; Phasing</h3>
       <p>
-        Olympia follows the existing <strong>ECIP-1000</strong> process, which is Ethereum Classic’s
-        standard path for network upgrades. It is expected to roll out in phases, with careful testing
-        and community review at each step.
+        Olympia follows the existing <strong>ECIP-1000</strong> process, Ethereum Classic’s standard
+        path for network upgrades. It is expected to roll out in phases, with careful testing and
+        community review at each step. As of November 11, 2025 (“Olympia Day”), the project has moved
+        from the ECIP drafting phase into reference implementation, with the consensus-layer changes
+        of ECIP-1111 under active development in the Fukuii client.
       </p>
       <ol>
         <li>
           <strong>Research &amp; Historical Context</strong><br />
-          Years of ETC community calls and research (2021–2024) documented long-term funding
-          challenges, client fragility, and the need for a protocol-native, non-inflationary
-          treasury mechanism.
+          Years of ETC community calls and research documented long-term funding challenges,
+          client fragility, and the need for a protocol-native, non-inflationary Treasury mechanism.
         </li>
         <li>
           <strong>ECIP Drafting</strong><br />
           ECIPs 1111–1115 are drafted as a tightly scoped, modular suite, each with a single,
-          well-defined responsibility.
+          well-defined responsibility and clear interfaces to the others.
         </li>
         <li>
           <strong>Testnet Implementations</strong><br />
           Client and contract implementations are deployed on testnets (such as Mordor) to validate
-          behavior, assumptions, and operator experience.
+          behavior, economic assumptions, and operator experience.
         </li>
         <li>
           <strong>Community Review &amp; Refinement</strong><br />
@@ -238,7 +269,7 @@
         <li>
           <strong>Mainnet Activation (Pending Consensus)</strong><br />
           If broad consensus forms, Olympia is scheduled for a future network upgrade through the
-          established ETC governance process.
+          established ECIP-1000 governance process.
         </li>
       </ol>
       <div class="callout">
@@ -249,6 +280,7 @@
       </div>
     </section>
 
+    <!-- FURTHER READING -->
     <section id="links">
       <h3><i class="fa-solid fa-link"></i> Further Reading &amp; Related Pages</h3>
       <p>
